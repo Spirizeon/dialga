@@ -1,4 +1,11 @@
-# 🎍 dialga
-> *No, it's not the pokemon this time...*
-### the modern version control system
+<div align="center">
+<img src="https://github.com/Spirizeon/dialga/assets/123345456/fcc540b3-deb1-4cac-a952-2800eaea114b" width="250px" height="auto" />
+
+
+# 💠 dialga
+### *the modern version control system*
+
+</div>
+
+
 
