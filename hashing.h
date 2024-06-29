@@ -1,6 +1,6 @@
 #ifndef HASHING_H
 #define HASHING_H
 
-char *hash_file(const char *filename);
+void hash_file(const char *repo_name,const char *file_name);
 
 #endif 

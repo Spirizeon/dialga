@@ -9,8 +9,9 @@ int main() {
     printf("enter repo name: ");
     scanf("%s", repo_name);
     init(repo_name);
-		system("touch sample.txt");
-		hash_file("sample.txt");
+		hash_file(repo_name,"chicken.c");
+		
+		
     return 0;
 }
 

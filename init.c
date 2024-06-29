@@ -8,20 +8,15 @@
 
 void init(char* repo_name) {
     if(mkdir(repo_name, 0755) == 0) {
-    } else {
-        perror("mkdir");
-        return;
-    }
+    } 
+    
 
     char temp_name[MAX_BUF_SIZE];
     strcpy(temp_name, repo_name);
     strcat(temp_name, "/.dlgx");
 
     if(mkdir(temp_name, 0755) == 0) {
-    } else {
-        perror("mkdir");
-        return;
-    }
+    } 
 
     char* dlgx_contents[] = {"objects", "refs", "refs/heads"};
     for(int i = 0; i < 3; i++) {
@@ -30,9 +25,6 @@ void init(char* repo_name) {
         strcat(temp_name, dlgx_contents[i]);
 
         if(mkdir(temp_name, 0755) == 0) {
-        } else {
-            perror("mkdir");
-            return;
         }
     }
 
