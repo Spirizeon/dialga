@@ -17,7 +17,6 @@ void hash_file(const char *repo_name,const char *file_name){
 		strcpy(filename,repo_name);
 		strcat(filename,"/");
 		strcat(filename,file_name);
-		printf("%s",filename);
 		fp = fopen(filename,"r");
 		if(fp == NULL){
 			printf("dialga: read error: file is empty or corrupted");
@@ -37,29 +36,31 @@ void hash_file(const char *repo_name,const char *file_name){
 			SHA256(buffer,strlen(buffer),sha256_digest);
 
 
-	// debugging purposes
-	for(int i = 0;i<SHA256_DIGEST_LENGTH;i++){
-		printf("%02x",sha256_digest[i]);
-	}
-	printf("\nEND\n");
 
 	fclose(fp);
 
 	//time to create a blob
 	FILE *blob;
-	char blob_name[3];
+	char blob_name[30];
 	position = 0;
-	while(position <= 1){
+	while(position < 3){
 		blob_name[position] = sha256_digest[position];
 		position++;
 	}
+	printf("%s",blob_name);
 	char blobname[MAX_BUF_SIZE];
+	strcpy(blobname,"./");
 	strcpy(blobname,repo_name);
 	strcat(blobname,"/");
 	char blob_path[] = ".dlgx/objects/";
 	strcat(blobname,blob_path);
 	strcat(blob_path,blob_name);
-	blob = fopen(blob_name,"a");
+	char repoer[MAX_BUF_SIZE];
+	strcpy(repoer,repo_name);
+	strcat(repoer,"/"); //pakia/
+	strcat(repoer,blob_path); //palkia/.dlgx/objects/??
+	printf("%s",repoer);
+	if(mkdir(repoer, 0755) == 0) {} 
 	printf("blob created!");
 	fclose(blob);
 
