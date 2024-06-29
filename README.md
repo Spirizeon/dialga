@@ -3,7 +3,7 @@
 
 
 # dialga
-### *the modern version control system*
+### *reverse engineered git, but better*
 
 
 
