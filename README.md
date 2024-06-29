@@ -9,10 +9,10 @@
 
 <h4 align="center">
   [<a href="#installation">Installation</a>]
-  [<a href="https://zellij.dev/screencasts/">Screencasts & Tutorials</a>]
-  [<a href="https://zellij.dev/documentation/configuration">Configuration</a>]
-  [<a href="https://zellij.dev/documentation/layouts">Layouts</a>]
-  [<a href="https://zellij.dev/documentation/faq">FAQ</a>]
+  [<a href="#screenshots">Screenshots</a>]
+  [<a href="#features">Features</a>]
+  [<a href="#usage">Usage</a>]
+  [<a href="#faq">FAQ</a>]
 </h4>
 
 </div>
@@ -20,30 +20,7 @@
 ## Features
 #### 🔥 Precise tracking with SHA-256 hashing 
 #### 🔥 Lighter system footprint 
---
--
--
--
--
 
--
--
--
--
--
--
--
--
-
--
--
--
--
--
--
-
-
--
 ## Installation
 
 ### Compile from scratch
@@ -56,4 +33,8 @@ make final
 ```
 make clean # clean unnecessary files
 ```
+
+## Usage
+## Screenshots
+## FAQ
 
