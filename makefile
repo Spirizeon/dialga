@@ -1,9 +1,9 @@
 CFLAGS = -Wno-implicit-function-declaration
-all: final
+all: dialga
 
-final: main.o init.o hashing.o
-	@gcc $(CFLAGS) main.o hashing.o -lcrypto init.o -o final 
-	@chmod +x final
+dialga: main.o init.o hashing.o
+	@gcc $(CFLAGS) main.o hashing.o -lcrypto init.o -o dialga
+	@chmod +x dialga
 	@echo "🔗 Linking...✅"
 
 main.o: main.c
@@ -19,5 +19,5 @@ hashing.o: hashing.c
 	@echo "⚙ Compiling hashing file...✅"
 
 clean:
-	@rm main.o hashing.o init.o final *.out
+	@rm main.o hashing.o init.o dialga *.out
 	@echo "🗑 Cleaning up..."
