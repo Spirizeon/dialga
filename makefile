@@ -1,19 +1,23 @@
 CFLAGS = -Wno-implicit-function-declaration
 all: final
 
-final: main.o init.o
-	@echo "⛓ linking and producing final application"
-	gcc $(CFLAGS) main.o init.o -o final 
+final: main.o init.o hashing.o
+	gcc $(CFLAGS) main.o hashing.o -lcrypto init.o -o final 
 	chmod +x final
+	@echo "⛓ linking and producing final application ✅"
 
 main.o: main.c
-	@echo "⚙ Compiling main file..."
 	gcc $(CFLAGS) -c main.c 
+	@echo "⚙ Compiling main file...✅"
 
-hello.o: hello.c
-	@echo "⚙ Compiling init file..."
-	gcc $(CFLAGS) -c init.c gcc 
+init.o: init.c
+	gcc $(CFLAGS) -c init.c
+	@echo "⚙ Compiling init file...✅"
+
+hashing.o: hashing.c
+	gcc $(CFLAGS) -lcrypto -c hashing.c 
+	@echo "⚙ Compiling hashing file...✅"
 
 clean:
 	@echo "🗑 Cleaning up..."
-	rm main.o init.o final
+	rm main.o hashing.o init.o final

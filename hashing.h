@@ -3,4 +3,4 @@
 
 char *hash_file(const char *filename);
 
-#HASHING_H /* INIT_H */
+#endif 
