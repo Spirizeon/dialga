@@ -18,9 +18,9 @@
 </div>
 
 ## Features
-#### 🔥 Precise tracking with SHA-256 hashing 
-#### 🔥 Lighter system footprint 
-
+- SHA-256 hashing 📸
+- Lighter system footprint 🛫
+- Similar syntax to Git 💖 
 ## Installation
 
 ### Compile from scratch
