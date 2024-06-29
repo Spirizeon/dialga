@@ -7,6 +7,7 @@
 
 //function that returns the hash of a file 
 void hash_file(const char *repo_name,const char *file_name){
+		
 		char sha256_digest[SHA256_DIGEST_LENGTH];
 		int bufsize = MAX_BUF_SIZE;
 		int position = 0;
@@ -19,8 +20,8 @@ void hash_file(const char *repo_name,const char *file_name){
 		strcat(filename,file_name);
 		fp = fopen(filename,"r");
 		if(fp == NULL){
-			printf("dialga: read error: file is empty or corrupted");
-			exit(EXIT_FAILURE);
+			printf("dialga: file doesn't exist\n");
+			return;
 		}
 		
 		do{
@@ -33,34 +34,41 @@ void hash_file(const char *repo_name,const char *file_name){
 			position++;
 		} while(ch != EOF); 
 		
-			SHA256(buffer,strlen(buffer),sha256_digest);
-
-
-
+			SHA1(buffer,strlen(buffer),sha256_digest);
+	//time for hash -> hexadecimal
+	int hex_index = 0;
+	char *hex_digest = malloc(strlen(sha256_digest)*2 + 1);
+	for(int i=0;i<strlen(sha256_digest);i++){
+		ch = sha256_digest[i];
+		sprintf(&hex_digest[hex_index],"%x",ch);
+		hex_index+=2;
+	}
+	hex_digest[strlen(hex_digest)] = 0x0;
+		
+	printf("%s\n",hex_digest);
 	fclose(fp);
 
 	//time to create a blob
 	FILE *blob;
 	char blob_name[30];
 	position = 0;
-	while(position < 3){
-		blob_name[position] = sha256_digest[position];
+	while(position < 1){
+		blob_name[position] = hex_digest[position];
 		position++;
 	}
 	printf("%s",blob_name);
-	char blobname[MAX_BUF_SIZE];
-	strcpy(blobname,"./");
-	strcpy(blobname,repo_name);
-	strcat(blobname,"/");
-	char blob_path[] = ".dlgx/objects/";
-	strcat(blobname,blob_path);
-	strcat(blob_path,blob_name);
 	char repoer[MAX_BUF_SIZE];
-	strcpy(repoer,repo_name);
+	strcpy(repoer,repo_name); //palkia
 	strcat(repoer,"/"); //pakia/
-	strcat(repoer,blob_path); //palkia/.dlgx/objects/??
-	if(mkdir(repoer, 0755) == 0) {} 
-	printf("blob created!");
+	char blob_path[] = ".dlgx/objects/";
+	strcat(blob_path,blob_name); //.dlgx/objects/0X
+	strcat(repoer,blob_path); //palkia/.dlgx/objects/0X??
+	//printf("%s",repoer);
+	if(mkdir(repoer, 0755) == 0){
+	}
+	else{
+		perror("mkdir");
+	}
 	fclose(blob);
 
 }
