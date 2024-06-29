@@ -6,9 +6,10 @@
 ### *the modern version control system*
 
 </div>
-### Features
-💠 Precise tracking with SHA-256 hashing
-💠 Lighter system footprint
+
+## Features
+#### 🔥 Precise tracking with SHA-256 hashing 
+#### 🔥 Lighter system footprint 
 
 ## Installation
 ### Compile from scratch
