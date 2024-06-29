@@ -59,7 +59,6 @@ void hash_file(const char *repo_name,const char *file_name){
 	strcpy(repoer,repo_name);
 	strcat(repoer,"/"); //pakia/
 	strcat(repoer,blob_path); //palkia/.dlgx/objects/??
-	printf("%s",repoer);
 	if(mkdir(repoer, 0755) == 0) {} 
 	printf("blob created!");
 	fclose(blob);
