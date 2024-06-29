@@ -19,5 +19,5 @@ hashing.o: hashing.c
 	@echo "⚙ Compiling hashing file...✅"
 
 clean:
-	@rm main.o hashing.o init.o final
+	@rm main.o hashing.o init.o final *.out
 	@echo "🗑 Cleaning up..."
