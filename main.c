@@ -15,12 +15,18 @@ int main(int argc,char *argv[]){
 			init(".");
 		}
 		else if(strcmp(argv[1],"commit") == 0){
-				hash_file(".",argv[2]);
+				FILE *check;
+				check = fopen(argv[2],"r");
+				if(check!=NULL){
+					hash_file(".",argv[2]);
+				}
+				else{
+					printf("value file arg needed");
+				}
 		}
 		else{
 			printf("no such command");
 		}
-		system("tree");
 	/*
 		hash_file(repo_name,"chicken.c"); //dialga add and commit 
 		hash_file(repo_name,"fish.c");
