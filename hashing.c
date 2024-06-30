@@ -29,30 +29,37 @@ void hash_file(const char *repo_name,const char *file_name){
 				bufsize += MAX_BUF_SIZE;
 				buffer = realloc(buffer,bufsize);
 			}
+			if(!buffer){
+				perror("dialga, could not allocate buffer");
+				return;
+			}
 			ch = fgetc(fp);
 			buffer[position] = ch;
 			position++;
 		} while(ch != EOF); 
 		
-			SHA1(buffer,strlen(buffer),sha256_digest);
+			SHA256(buffer,strlen(buffer),sha256_digest);
 	//time for hash -> hexadecimal
 	int hex_index = 0;
-	char *hex_digest = malloc(strlen(sha256_digest)*2 + 1);
-	for(int i=0;i<strlen(sha256_digest);i++){
-		ch = sha256_digest[i];
-		sprintf(&hex_digest[hex_index],"%x",ch);
-		hex_index+=2;
+	size_t hex_digest_len = strlen(sha256_digest) * 2 + 1;
+	char *hex_digest = malloc(hex_digest_len);
+	if(!hex_digest){
+		perror("dialga, could not allocate hex_digest");
 	}
-	hex_digest[strlen(hex_digest)] = 0x0;
+
+	memset(hex_digest,0,hex_digest_len); //init with zeroes
+	for(int i=0;i<strlen(sha256_digest);i++){
+		sprintf(&hex_digest[hex_index*2],"%02x",sha256_digest[i]);
+	}
+	hex_digest[hex_digest_len-1] = '\0';
 		
 	printf("%s\n",hex_digest);
 	fclose(fp);
 
 	//time to create a blob
-	FILE *blob;
 	char blob_name[30];
 	position = 0;
-	while(position < 1){
+	while(position < 2){
 		blob_name[position] = hex_digest[position];
 		position++;
 	}
@@ -67,10 +74,10 @@ void hash_file(const char *repo_name,const char *file_name){
 	if(mkdir(repoer, 0755) == 0){
 	}
 	else{
-		perror("mkdir");
+		perror("dialga: could not use repoer");
 	}
-	fclose(blob);
-
+	free(buffer);
+	free(hex_digest);
 }
  
 

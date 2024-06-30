@@ -11,9 +11,16 @@ int main(int argc,char *argv[]){
 			printf("Dialga is under development, please make sure you use it properly");
 			return 0;
 		}
-		if(strcmp(argv[1],"init")==0){
-				init("."); // dialga init
+		if(strcmp(argv[1],"init") == 0){
+			init(".");
 		}
+		else if(strcmp(argv[1],"commit") == 0){
+				hash_file(".",argv[2]);
+		}
+		else{
+			printf("no such command");
+		}
+		system("tree");
 	/*
 		hash_file(repo_name,"chicken.c"); //dialga add and commit 
 		hash_file(repo_name,"fish.c");

@@ -19,5 +19,6 @@ hashing.o: hashing.c
 	@echo "⚙ Compiling hashing file...✅"
 
 clean:
-	@rm main.o hashing.o init.o dialga *.out
+	@rm main.o hashing.o init.o dialga
+	@rm -rf .dlgx
 	@echo "🗑 Cleaning up..."
