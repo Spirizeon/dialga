@@ -2,48 +2,62 @@
 outline: deep
 ---
 
-# Runtime API Examples
+# How to use ✅
 
-This page demonstrates usage of some of the runtime APIs provided by VitePress.
+Dialga provides a robust version control system that helps you manage and track changes in your projects effectively, using familiar Git-like commands and workflows.
 
-The main `useData()` API can be used to access site, theme, and page data for the current page. It works in both `.md` and `.vue` files:
+## Add to `path` 🚦
+```bash
+$ export PATH="<path to dialga binary>:$PATH"
+```
+refresh your shell profile afterwards, then check if Dialga is ready to use
+```bash
+$ dialga --version
+0.0.1
+```
+## Initializing a Repository 🔷
 
-```md
-<script setup>
-import { useData } from 'vitepress'
+To start version controlling a project, navigate to your project directory and initialize a Dialga repository:
 
-const { theme, page, frontmatter } = useData()
-</script>
-
-## Results
-
-### Theme Data
-<pre>{{ theme }}</pre>
-
-### Page Data
-<pre>{{ page }}</pre>
-
-### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
+```bash
+$ dialga init
 ```
 
-<script setup>
-import { useData } from 'vitepress'
+This command creates a `.dlgx` directory where Dialga stores its metadata.
 
-const { site, theme, page, frontmatter } = useData()
-</script>
+## Tracking Changes (to be added) 🔀
 
-## Results
+Dialga tracks changes to your files similarly to Git. You can add files to the staging area using:
 
-### Theme Data
-<pre>{{ theme }}</pre>
+```bash
+$ dialga add <file>
+```
 
-### Page Data
-<pre>{{ page }}</pre>
+Replace `<file>` with the name of the file you want to add. You can also use `.` to add all files in the current directory.
 
-### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
+## Committing Changes 🎊
 
-## More
+Once you have added files to the staging area, commit the changes to the repository:
 
-Check out the documentation for the [full list of runtime APIs](https://vitepress.dev/reference/runtime-api#usedata).
+```bash
+$ dialga commit <file_name>
+```
+
+## Checking Status (to be added) 🎑
+
+To see the status of your repository, including tracked/untracked files and modifications:
+
+```bash
+$ dialga status
+```
+
+## Viewing Commit History (to be added) 👀
+
+You can view the commit history to see all previous commits and their messages:
+
+```bash
+$ dialga log
+```
+
+
+

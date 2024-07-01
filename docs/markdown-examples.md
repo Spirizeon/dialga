@@ -1,85 +1,31 @@
-# Markdown Extension Examples
+# Getting Started with Dialga 🚀
 
-This page demonstrates some of the built-in markdown extensions provided by VitePress.
+Welcome to Dialga, the reverse engineered git alternative! This guide will help you get started with installing and using Dialga on your system.
 
-## Syntax Highlighting
+## Installation 🔧
 
-VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shikijs/shiki), with additional features like line-highlighting:
+### Compile from Source
 
-**Input**
+To install Dialga, follow these steps:
 
-````md
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
+1. Clone the Dialga repository from GitHub:
+
+```bash
+git clone https://github.com/spirizeon/dialga.git
+cd dialga
 ```
-````
+2. Compile Dialga using the `make` 
+```make
+make 
+```
+This will compile and build Dialga from the source code.
 
-**Output**
-
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
+3. Optionally, clean up unnecessary files after compilation:
+```make
+make clean
 ```
 
-## Custom Containers
+### Support for package managers
+Coming soon ;)
 
-**Input**
 
-```md
-::: info
-This is an info box.
-:::
-
-::: tip
-This is a tip.
-:::
-
-::: warning
-This is a warning.
-:::
-
-::: danger
-This is a dangerous warning.
-:::
-
-::: details
-This is a details block.
-:::
-```
-
-**Output**
-
-::: info
-This is an info box.
-:::
-
-::: tip
-This is a tip.
-:::
-
-::: warning
-This is a warning.
-:::
-
-::: danger
-This is a dangerous warning.
-:::
-
-::: details
-This is a details block.
-:::
-
-## More
-
-Check out the documentation for the [full list of markdown extensions](https://vitepress.dev/guide/markdown).
