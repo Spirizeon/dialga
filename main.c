@@ -4,7 +4,7 @@
 #include "hashing.h"
 #include <string.h>
 #define MAX_BUF_SIZE 1024
-
+#define VERSION_NUM "0.0.1"
 int main(int argc,char *argv[]){
 	//if argument is smaller than 2 
 		if(argc < 2){
@@ -23,6 +23,9 @@ int main(int argc,char *argv[]){
 				else{
 					printf("value file arg needed");
 				}
+		}
+		else if(strcmp(argv[1],"--version") == 0){
+				printf("dialga version %s\n",VERSION_NUM);
 		}
 		else{
 			printf("no such command");

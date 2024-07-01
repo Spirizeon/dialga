@@ -1,0 +1,98 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <string.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+
+struct index_entry{
+	unsigned char sha1[SHA_DIGEST_LENGTH];
+	unsigned int mode;
+	char path[256];
+};
+
+int read_index(struct index_entry **entries){
+	FILE *fd;
+	fd = fopen(INDEX_FILE,"r");
+	if(!fd){
+		perror("fail to openindex");
+		return -1;
+	}
+	
+
+	// read index entries into memory
+	struct stat st;
+	if(fstat(fd,&st) == -1){
+		perror("failed to get index file size");
+		return -1;
+	}
+	
+	size_t num_entries = st.st_size / sizeof(struct index_entry);
+	*entries = (*struct index_entry *)malloc(num_entries * sizeof(struct index_entry));
+	if(*entries == NULL){
+		perror("memory allocation failed");
+		close(fd);
+		return -1;
+	}
+	
+	if(fread(fd,*entries,st.st_size) != st.st_size){
+		perror("error reading index file");
+		fclose(fd);
+		return -1;
+	}
+	
+	fclose(fd);
+	return num_entries;
+}
+	
+
+int write_file(struct index_entry *entries, size_t num_entries){
+		int fd = fopen(index_file, 0664);
+		if(!fd){
+			perror("could not open index for writing");
+			return -1;
+		}
+	if(fwrite(fd)){
+
+
+int git_add(const char (filename){
+						struct index_entry *entries;
+						int numb_entries = read_index(&entries);
+						int found = 0;
+						    if (num_entries == -1) {
+        fprintf(stderr, "Failed to read index file\n");
+        return -1;
+    }
+    
+    // Update or add the entry for the file
+    int found = 0;
+    for (int i = 0; i < num_entries; i++) {
+        if (strcmp(entries[i].path, filename) == 0) {
+            // File already exists in index, update it
+            memcpy(entries[i].sha1, hash, SHA_DIGEST_LENGTH);
+            // You would also update mode, timestamp, etc. here
+            found = 1;
+            break;
+        }
+    }
+    
+    if (!found) {
+        // File is new, add it to index
+        strcpy(entries[num_entries].path, filename);
+        memcpy(entries[num_entries].sha1, hash, SHA_DIGEST_LENGTH);
+        entries[num_entries].mode = S_IFREG | 0644;  // Example mode for regular file
+        num_entries++;
+    }
+    
+    // Write updated index entries back to disk
+    if (write_index(entries, num_entries) == -1) {
+        fprintf(stderr, "Failed to write index file\n");
+        free(entries);
+        return -1;
+    }
+    
+    free(entries);
+    return 0;
+}
+
+
