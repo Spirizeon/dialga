@@ -6,20 +6,26 @@ hero:
   name: "Dialga 💠"
   text: "your love for Git, debloated..."
   tagline: reverse-engineered version control inspired from Git
+  image: 
+    src: 'assets/dialogo.png'
+    alt: 'product logo'
   actions:
     - theme: brand
-      text: Markdown Examples
+      text: Installation
       link: /markdown-examples
     - theme: alt
-      text: API Examples
+      text: Docs
       link: /api-examples
 
 features:
-  - title: ⚙ Similar syntax
-    details: feel comfy with git syntax
-  - title: 💡Lightweight
+  - icon: 💡
+    title: Similar syntax
+    details: feel comfy with syntax that closely resembles Git 
+  - icon: 🌬
+    title: Lightweight
     details: forget the features you don't need, let's be real
-  - title: 🏇Blazing fast
-    details: Written in C
----
+  - icon: ⚡ 
+    title: Blazing fast
+    details: rebuilt from scratch in C with minimal dependencies in mind
 
+---

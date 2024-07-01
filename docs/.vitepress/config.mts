@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "dialga",
+  title: "dialga - built by spirizeon",
   description: "documentation page for dialga: reverse engineered git with improvements",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -22,8 +22,9 @@ export default defineConfig({
       }
     ],
 
+		base: '/dialga/',
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
     ]
   }
 })
