@@ -7,7 +7,7 @@ hero:
   text: "your love for Git, debloated..."
   tagline: reverse-engineered version control inspired from Git
   image: 
-    src: 'assets/dialogo.png'
+    src: 'dialogo.png'
     alt: 'product logo'
   actions:
     - theme: brand
