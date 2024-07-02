@@ -19,14 +19,9 @@ hashing.o: hashing.c
 	@echo "⚙ Compiling hashing file...✅"
 
 clean:
-	@rm main.o hashing.o init.o dialga
+	@rm main.o hashing.o init.o dialga test
 	@rm -rf .dlgx
 	@echo "🗑 Cleaning up..."
 
 
-test: 
-	@./dialga init
-	@./dialga add init.c
-	@./dialga add main.c
-	@./dialga status
-	@./dialga commit 
+
