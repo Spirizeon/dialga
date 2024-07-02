@@ -72,9 +72,11 @@ void hash_file(const char *repo_name,const char *file_name){
 	//printf("%s",repoer);
 	if(mkdir(repoer, 0755) == 0){
 	}
+	/*
 	else{
 		perror("dialga: could not use repoer");
 	}
+	*/
 	
 	//time to create the blob file
 	FILE *blob;

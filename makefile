@@ -22,3 +22,11 @@ clean:
 	@rm main.o hashing.o init.o dialga
 	@rm -rf .dlgx
 	@echo "🗑 Cleaning up..."
+
+
+test: 
+	@./dialga init
+	@./dialga add init.c
+	@./dialga add main.c
+	@./dialga status
+	@./dialga commit 
