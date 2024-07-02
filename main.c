@@ -23,10 +23,42 @@ int main(int argc,char *argv[]){
 				else{
 					printf("value file arg needed");
 				}
+				fclose(check);
 		}
+	
+
+
+		else if(strcmp(argv[1],"add") == 0){
+				FILE *check;
+				check = fopen(argv[2],"r");
+				if(check!=NULL){
+						//add file name to git index		
+						FILE *indexwriter;
+						indexwriter = fopen(".dlgx/index","a");
+						if(!indexwriter){
+							printf("could not open file for writing");
+							return 0;
+						}
+						fprintf(indexwriter,"%s\n",argv[2]);
+						fclose(indexwriter);
+				}
+				else{
+					printf("value file arg needed");
+				}
+				fclose(check);
+				
+			}
+	
+
+
+
 		else if(strcmp(argv[1],"--version") == 0){
 				printf("dialga version %s\n",VERSION_NUM);
 		}
+
+
+
+
 		else{
 			printf("no such command");
 		}

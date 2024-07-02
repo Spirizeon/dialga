@@ -5,6 +5,7 @@ export default defineConfig({
   title: "dialga - built by spirizeon",
   description: "documentation page for dialga: reverse engineered git with improvements",
 	base: "/dialga/",
+
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
