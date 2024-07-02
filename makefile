@@ -1,7 +1,7 @@
 CFLAGS = -Wno-implicit-function-declaration
 all: dialga
 
-dialga: clean main.o init.o hashing.o
+dialga: main.o init.o hashing.o
 	@gcc $(CFLAGS) main.o hashing.o -lcrypto init.o -o dialga
 	@chmod +x dialga
 	@echo "🔗 Linking...✅"
