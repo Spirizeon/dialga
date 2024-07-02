@@ -24,8 +24,8 @@ features:
   - icon: 🌬
     title: Lightweight
     details: forget the features you don't need, let's be real
-  - icon: ⚡ 
+  - icon: 🦀 
     title: Blazing fast
-    details: rebuilt from scratch in C with minimal dependencies in mind
+    details: rebuilt from scratch in Rust with minimal dependencies in mind
 
 ---

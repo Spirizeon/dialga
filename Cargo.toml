@@ -1,0 +1,13 @@
+[package]
+name = "dialga"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[[bin]]
+name = "dialga"
+[profile.release]
+opt-level = 3

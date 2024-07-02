@@ -35,7 +35,7 @@ int main(int argc,char *argv[]){
 								position++;
 							}
 							line[position] = '\0';
-							hash_file(".",line);
+							printf("%s",hash_file(".",line));
 				}
 				system("rm .dlgx/index");
 				fclose(indexread);
