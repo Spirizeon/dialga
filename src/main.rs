@@ -1,9 +1,10 @@
 const _VERSION_NUM: &str = "0.0.1";
 mod init;
 mod hash;
+mod status;
 //mod compress;
 use std::env;
-use std::fs;
+// use std::fs;
 fn main() {
     let args: Vec<String> = env::args().collect();
     let argc = args.len();
@@ -24,7 +25,7 @@ fn main() {
         //write data to path
         //let _ = fs::write(blob_path,packdata);
     }
-    else { 
-
+    else {
+        
     }
 }

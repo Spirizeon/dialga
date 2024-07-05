@@ -10,7 +10,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Docs', link: '/markdown-examples' },
+      { text: 'Docs', link: '/docs_02.md' },
       { text: 'Source', link: 'https://github.com/spirizeon/dialga' },
     ],
 		footer: {
@@ -19,10 +19,15 @@ export default defineConfig({
 		},
     sidebar: [
       {
-        text: 'Documentation =>',
+        text: 'Documentation 📖',
         items: [
-          { text: 'Getting started 🚀', link: '/markdown-examples' },
-          { text: 'How to use ✅', link: '/api-examples' }
+          { text: '🚀 Getting started', link: '/docs_01.md' },
+          { text: '✅ Usage examples', link: '/docs_02.md' },
+          { text: '🤝 Contributing', link: '/docs_03.md' },
+          { text: '📚 FAQs', link: '/docs_04.md' },
+          { text: '👨‍🔧 Troubleshooting', link: '/docs_05.md' },
+          { text: '😉 Contact', link: '/docs_06.md' },
+          { text: '👮 License', link: '/docs_07.md' },
         ]
       }
     ],

@@ -12,10 +12,10 @@ hero:
   actions:
     - theme: brand
       text: Installation
-      link: /markdown-examples
+      link: /docs_01.md
     - theme: alt
       text: Docs
-      link: /api-examples
+      link: /docs_02.md
 
 features:
   - icon: 💡
