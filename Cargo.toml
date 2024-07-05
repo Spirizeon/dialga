@@ -14,3 +14,8 @@ base64 = "0.22.1"
 name = "dialga"
 [profile.release]
 opt-level = 3
+
+#backtrace for dev builds
+[profile.dev]
+debug = true
+env = { RUST_BACKTRACE = 1 }
