@@ -1,6 +1,8 @@
 const _VERSION_NUM: &str = "0.0.1";
 mod init;
-mod hash;
+mod hash; //create blobs and make tempo tree
+mod tree; //create tree object and delete tempo tree
+
 //mod compress;
 use std::env;
 // use std::fs;
@@ -17,10 +19,10 @@ fn main() {
 
     }
     else if &args[1] == "commit"{
-        //create a blob and return blob path
         hash::hash("sample");
         hash::hash("sample2");
         hash::hash("sample3");
+        tree::hash();
         //remove the compress function for now
 
     }
