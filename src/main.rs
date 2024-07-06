@@ -19,6 +19,8 @@ fn main() {
     else if &args[1] == "commit"{
         //create a blob and return blob path
         hash::hash("sample");
+        hash::hash("sample2");
+        hash::hash("sample3");
         //remove the compress function for now
 
     }
