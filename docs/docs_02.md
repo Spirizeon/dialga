@@ -11,9 +11,12 @@ Dialga provides a robust version control system that helps you manage and track 
 $ export PATH="<path to dialga binary>:$PATH"
 ```
 refresh your shell profile afterwards, then check if Dialga is ready to use
+
+> note: we are assuming dialga is added to `$PATH`. If not, please add a `./` prefix everytime the binary is called.
+
 ```bash
 $ dialga --version
-0.0.1
+0.1.0
 ```
 ## Initializing a Repository
 
@@ -25,30 +28,12 @@ $ dialga init
 
 This command creates a `.dlgx` directory where Dialga stores its metadata.
 
-## Tracking Changes (to be added) 
-
-Dialga tracks changes to your files similarly to Git. You can add files to the staging area using:
-
-```bash
-$ dialga add <file>
-```
-
-Replace `<file>` with the name of the file you want to add. You can also use `.` to add all files in the current directory.
-
 ## Committing Changes 
 
-Once you have added files to the staging area, commit the changes to the repository:
+Dialga doesn't use a staging area, and infact tracks commits through the `.commit` file. 
 
 ```bash
-$ dialga commit <file_name>
-```
-
-## Checking Status (to be added) 
-
-To see the status of your repository, including tracked/untracked files and modifications:
-
-```bash
-$ dialga status
+$ dialga commit <file_name> <commit_message>
 ```
 
 ## Viewing Commit History (to be added) 
@@ -56,8 +41,14 @@ $ dialga status
 You can view the commit history to see all previous commits and their messages:
 
 ```bash
-$ dialga log
+$ dialga history
 ```
 
+## Restoring changes
 
+Dialga can only restore changes upto the base directory for now. To restore a change, grab the hash of the commit from history.
+
+```bash
+$ dialga restore <commit_hash>
+```
 

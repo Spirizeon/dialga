@@ -14,16 +14,12 @@ To install Dialga, follow these steps:
 git clone https://github.com/spirizeon/dialga.git
 cd dialga
 ```
-2. Compile Dialga using the `make` 
+2. Compile Dialga using the `cargo build` 
 ```make
-make 
+cargo build --release
+cp target/release/dialga .
 ```
-This will compile and build Dialga from the source code.
-
-3. Optionally, clean up unnecessary files after compilation:
-```make
-make clean
-```
+You can optionally add dialga to `$PATH` for better accessibility
 
 ### Support for package managers
 Coming soon ;)

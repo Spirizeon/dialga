@@ -24,8 +24,6 @@ export default defineConfig({
           { text: '🚀 Getting started', link: '/docs_01.md' },
           { text: '✅ Usage examples', link: '/docs_02.md' },
           { text: '🤝 Contributing', link: '/docs_03.md' },
-          { text: '📚 FAQs', link: '/docs_04.md' },
-          { text: '👨‍🔧 Troubleshooting', link: '/docs_05.md' },
           { text: '😉 Contact', link: '/docs_06.md' },
           { text: '👮 License', link: '/docs_07.md' },
         ]
