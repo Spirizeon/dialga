@@ -7,9 +7,9 @@ edition = "2021"
 
 [dependencies]
 sha2 = "0.10"
+miniz_oxide = "0.4.4"
+whoami = "1.5.1"
 flate2 = "1.0.30"
-base64 = "0.22.1"
-
 [[bin]]
 name = "dialga"
 [profile.release]

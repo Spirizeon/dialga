@@ -8,7 +8,7 @@ pub fn init(){
         let _ = fs::create_dir(path_ex);
     }
     // make index file now
-    let _ = fs::write(".dlgx/index","");
+    let _ = fs::write(".dlgx/objects/.commit","");
     println!("===================================");
     println!("dialga: your 💖 for git, debloated");
     println!("docs @ https://spirizeon.github.io/dialga");
